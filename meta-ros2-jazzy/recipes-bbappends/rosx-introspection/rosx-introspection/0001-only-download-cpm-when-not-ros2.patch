@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 005588b..5f5acf1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -5,8 +5,6 @@ project(rosx_introspection LANGUAGES CXX VERSION 1.0.2)
+ 
+ option(CMAKE_POSITION_INDEPENDENT_CODE "Set -fPIC" ON)
+ 
+-include(cmake/CPM.cmake)
+-
+ find_package(ament_cmake QUIET)
+ 
+ if (ament_cmake_FOUND)
+@@ -53,6 +51,8 @@ else()
+     # Override Fast-CDR option: compile as static lib
+     # set(BUILD_SHARED_LIBS OFF CACHE BOOL "Create static libraries by default")
+ 
++    include(cmake/CPM.cmake)
++
+     CPMAddPackage(NAME fastcdr
+                   GIT_TAG v2.2.2
+                   GITHUB_REPOSITORY "eProsima/Fast-CDR"
