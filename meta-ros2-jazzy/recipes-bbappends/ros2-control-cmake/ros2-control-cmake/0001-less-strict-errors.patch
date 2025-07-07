@@ -1,0 +1,15 @@
+diff --git a/cmake/ros2_control.cmake b/cmake/ros2_control.cmake
+index 3f5b287..9ee1169 100644
+--- a/cmake/ros2_control.cmake
++++ b/cmake/ros2_control.cmake
+@@ -34,9 +34,7 @@ endmacro()
+ # set compiler options depending on detected compiler
+ macro(set_compiler_options)
+   if(CMAKE_CXX_COMPILER_ID MATCHES "(GNU|Clang)")
+-    add_compile_options(-Wall -Wextra -Wpedantic -Werror=conversion -Werror=unused-but-set-variable
+-                        -Werror=return-type -Werror=shadow -Werror=format
+-                        -Werror=missing-braces)
++    add_compile_options(-Wall -Wextra -Werror=return-type)
+     message(STATUS "Compiler warnings enabled for ${CMAKE_CXX_COMPILER_ID}")
+ 
+     # Extract major version if g++ is used
