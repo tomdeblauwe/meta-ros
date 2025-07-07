@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 715ce29..a1c616d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -20,7 +20,7 @@ macro(enable_strict_compiler_warnings target)
+   elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+     target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Werror -Wold-style-cast -Wfloat-equal -Wmost -Wunused-exception-parameter)
+   else()
+-    target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Werror -Wold-style-cast -Wfloat-equal)
++    target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Wold-style-cast -Wfloat-equal)
+   endif()
+ endmacro()
+ 
