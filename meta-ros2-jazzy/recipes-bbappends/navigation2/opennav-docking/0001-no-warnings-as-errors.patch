@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9278234d9..d11db167c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -25,7 +25,7 @@ find_package(opennav_docking_core REQUIRED)
+ 
+ # potentially replace with nav2_common, nav2_package()
+ set(CMAKE_CXX_STANDARD 17)
+-add_compile_options(-Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -Wshadow -Wnull-dereference)
++add_compile_options(-Wall -Wextra -Wpedantic)
+ 
+ include_directories(
+   include
