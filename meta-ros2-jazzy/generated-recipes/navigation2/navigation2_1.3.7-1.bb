@@ -45,7 +45,7 @@ ROS_EXEC_DEPENDS = " \
     nav2-planner \
     nav2-regulated-pure-pursuit-controller \
     nav2-rotation-shim-controller \
-    nav2-rviz-plugins \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'qt5', 'nav2-rviz-plugins', '', d)} \
     nav2-simple-commander \
     nav2-smac-planner \
     nav2-smoother \
