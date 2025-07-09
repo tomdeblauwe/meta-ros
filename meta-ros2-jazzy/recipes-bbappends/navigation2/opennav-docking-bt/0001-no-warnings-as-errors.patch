@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c89330ee3..0f5bc6f3d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -15,7 +15,7 @@ find_package(behaviortree_cpp REQUIRED)
+ 
+ # potentially replace with nav2_common, nav2_package()
+ set(CMAKE_CXX_STANDARD 17)
+-add_compile_options(-Wall -Wextra -Wpedantic -Werror -Wdeprecated -fPIC -Wshadow -Wnull-dereference)
++add_compile_options(-Wall -Wextra -Wpedantic)
+ 
+ include_directories(
+   include
