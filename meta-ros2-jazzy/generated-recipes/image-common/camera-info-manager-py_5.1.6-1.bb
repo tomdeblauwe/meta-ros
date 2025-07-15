@@ -10,7 +10,7 @@ AUTHOR = "Jose Mastrangelo <jmastrangelo@clearpathrobotics.com>"
 ROS_AUTHOR = "Jack O'Quin"
 HOMEPAGE = "http://ros.org/wiki/camera_info_manager_py"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=16;endline=16;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "image_common"

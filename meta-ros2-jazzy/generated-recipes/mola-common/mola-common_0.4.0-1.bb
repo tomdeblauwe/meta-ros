@@ -9,7 +9,7 @@ DESCRIPTION = "Common CMake scripts to all MOLA modules"
 AUTHOR = "Jose-Luis Blanco-Claraco <joseluisblancoc@gmail.com>"
 HOMEPAGE = "https://github.com/MOLAorg/"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=c1feec27682903a4270dbb401e443f91"
 
 ROS_CN = "mola_common"

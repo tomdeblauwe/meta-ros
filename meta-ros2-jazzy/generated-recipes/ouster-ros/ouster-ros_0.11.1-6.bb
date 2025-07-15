@@ -9,7 +9,7 @@ DESCRIPTION = "Ouster ROS2 driver"
 AUTHOR = "Ussama Naal <ussama.naal@ouster.io>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=9;endline=9;md5=c1feec27682903a4270dbb401e443f91"
 
 ROS_CN = "ouster-ros"

@@ -9,7 +9,7 @@ DESCRIPTION = "A repertory of multi primitive-to-primitive (MP2P) ICP algorithms
 AUTHOR = "Jose-Luis Blanco-Claraco <joseluisblancoc@gmail.com>"
 HOMEPAGE = "https://github.com/MOLAorg/mp2p_icp"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=67a6878f03ca5237389227bc9274a478"
 
 ROS_CN = "mp2p_icp"
