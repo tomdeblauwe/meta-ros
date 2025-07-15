@@ -12,7 +12,7 @@ HOMEPAGE = "https://github.com/TartanLlama/expected"
 SECTION = "devel"
 # Original license in package.xml, joined with "&" when multiple license tags were used:
 #         "Creative Commons Zero v1.0 Universal"
-LICENSE = "Creative-Commons-Zero-v1.0-Universal"
+LICENSE = "CC0-1.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=99bbbc21ede373b77d86a4695cf93337"
 
 ROS_CN = "cpp_polyfills"
