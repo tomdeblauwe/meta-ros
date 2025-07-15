@@ -9,7 +9,7 @@ DESCRIPTION = "Example for using an RPLIDAR A1 with a Create 3"
 AUTHOR = "Alberto Soragna <asoragna@irobot.com>"
 HOMEPAGE = "https://wiki.ros.org"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=11;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "create3_examples"

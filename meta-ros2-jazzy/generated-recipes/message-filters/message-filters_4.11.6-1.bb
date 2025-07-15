@@ -10,7 +10,7 @@ AUTHOR = "Geoffrey Biggs <geoff@openrobotics.org>"
 ROS_AUTHOR = "Dirk Thomas"
 HOMEPAGE = "https://github.com/intel/ros2_message_filters"
 SECTION = "devel"
-LICENSE = "BSD"
+LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d566ef916e9dedc494f5f793a6690ba5"
 
 ROS_CN = "message_filters"
