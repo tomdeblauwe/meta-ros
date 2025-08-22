@@ -6,3 +6,5 @@ ROS_BUILDTOOL_DEPENDS += " \
 "
 
 INSANE_SKIP:${PN} += "already-stripped"
+
+inherit python3targetconfig
