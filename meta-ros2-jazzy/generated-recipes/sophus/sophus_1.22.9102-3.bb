@@ -46,12 +46,15 @@ DEPENDS += "${ROS_EXPORT_DEPENDS} ${ROS_BUILDTOOL_EXPORT_DEPENDS}"
 
 RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 
-# matches with: https://github.com/ros2-gbp/sophus-release/archive/release/jazzy/sophus/1.22.9102-2.tar.gz
-ROS_BRANCH ?= "branch=release/jazzy/sophus"
+# matches with: https://github.com/ros2-gbp/sophus-release/archive/release/kilted/sophus/1.22.9102-3.tar.gz
+ROS_BRANCH ?= "branch=release/kilted/sophus"
 SRC_URI = "git://github.com/ros2-gbp/sophus-release;${ROS_BRANCH};protocol=https"
-SRCREV = "39c729040cd2c3720879b0df85f162c4ac789877"
+SRCREV = "7a6c73b3f895cc2e9ccca68c315795a4b9a77e54"
 S = "${WORKDIR}/git"
 
 ROS_BUILD_TYPE = "cmake"
 
 inherit ros_${ROS_BUILD_TYPE}
+
+ALLOW_EMPTY:${PN} = "1"
+
