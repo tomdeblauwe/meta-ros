@@ -20,8 +20,7 @@ ROS_BPN = "mola_input_rosbag2"
 ROS_BUILD_DEPENDS = " \
     cv-bridge \
     mola-kernel \
-    mrpt-libobs \
-    mrpt-libros-bridge \
+    mrpt \
     rosbag2-cpp \
     sensor-msgs \
     tf2-geometry-msgs \
@@ -29,15 +28,19 @@ ROS_BUILD_DEPENDS = " \
     tf2-ros \
 "
 
+inherit python3native cuda
+INSANE_SKIP:${PN} += "dev-so"
+
 ROS_BUILDTOOL_DEPENDS = " \
-    cmake-native \
+    ament-cmake-core-native \
+    ament-package-native \
+    python-cmake-module-native \
 "
 
 ROS_EXPORT_DEPENDS = " \
     cv-bridge \
     mola-kernel \
-    mrpt-libobs \
-    mrpt-libros-bridge \
+    mrpt \
     rosbag2-cpp \
     sensor-msgs \
     tf2-geometry-msgs \
@@ -50,8 +53,7 @@ ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 ROS_EXEC_DEPENDS = " \
     cv-bridge \
     mola-kernel \
-    mrpt-libobs \
-    mrpt-libros-bridge \
+    mrpt \
     rosbag2-cpp \
     sensor-msgs \
     tf2-geometry-msgs \

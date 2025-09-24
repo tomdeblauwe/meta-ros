@@ -19,8 +19,7 @@ ROS_BPN = "mola_pose_list"
 
 ROS_BUILD_DEPENDS = " \
     mola-common \
-    mrpt-libmaps \
-    mrpt-libposes \
+    mrpt \
 "
 
 ROS_BUILDTOOL_DEPENDS = " \
@@ -29,17 +28,17 @@ ROS_BUILDTOOL_DEPENDS = " \
 
 ROS_EXPORT_DEPENDS = " \
     mola-common \
-    mrpt-libmaps \
-    mrpt-libposes \
+    mrpt \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
 ROS_EXEC_DEPENDS = " \
     mola-common \
-    mrpt-libmaps \
-    mrpt-libposes \
+    mrpt \
 "
+
+INSANE_SKIP:${PN} += "dev-so"
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
 ROS_TEST_DEPENDS = ""

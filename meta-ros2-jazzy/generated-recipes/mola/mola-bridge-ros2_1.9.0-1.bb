@@ -20,8 +20,7 @@ ROS_BUILD_DEPENDS = " \
     mola-common \
     mola-kernel \
     mola-msgs \
-    mrpt-libmaps \
-    mrpt-libros-bridge \
+    mrpt \
     mrpt-nav-interfaces \
     nav-msgs \
     rclcpp \
@@ -43,9 +42,7 @@ ROS_EXPORT_DEPENDS = " \
     mola-common \
     mola-kernel \
     mola-msgs \
-    mrpt-libmaps \
-    mrpt-libros-bridge \
-    mrpt-nav-interfaces \
+    mrpt \
     nav-msgs \
     rclcpp \
     sensor-msgs \
@@ -60,8 +57,7 @@ ROS_EXEC_DEPENDS = " \
     mola-common \
     mola-kernel \
     mola-msgs \
-    mrpt-libmaps \
-    mrpt-libros-bridge \
+    mrpt \
     mrpt-nav-interfaces \
     nav-msgs \
     rclcpp \
@@ -77,6 +73,9 @@ ROS_TEST_DEPENDS = " \
     ament-lint-cmake \
 "
 
+inherit cuda
+INSANE_SKIP:${PN} += "dev-so"
+
 DEPENDS = "${ROS_BUILD_DEPENDS} ${ROS_BUILDTOOL_DEPENDS}"
 # Bitbake doesn't support the "export" concept, so build them as if we needed them to build this package (even though we actually
 # don't) so that they're guaranteed to have been staged should this package appear in another's DEPENDS.
@@ -86,7 +85,9 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 
 # matches with: https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_bridge_ros2/1.9.0-1.tar.gz
 ROS_BRANCH ?= "branch=release/jazzy/mola_bridge_ros2"
-SRC_URI = "git://github.com/ros2-gbp/mola-release;${ROS_BRANCH};protocol=https"
+SRC_URI = "git://github.com/ros2-gbp/mola-release;${ROS_BRANCH};protocol=https \
+        file://0001-export-targets.patch \
+"
 SRCREV = "2dfcf3be114f1399ec315d238239d8030b0d274e"
 S = "${WORKDIR}/git"
 

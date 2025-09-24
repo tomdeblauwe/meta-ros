@@ -1,0 +1,19 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 76db3fc77..953708f8f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -72,7 +72,13 @@ mola_add_library(
+ 
+ ament_export_dependencies()
+ # Export modern CMake targets
+-#ament_export_targets(export_${PROJECT_NAME})
++ament_export_targets(export_${PROJECT_NAME})
++install(TARGETS ${PROJECT_NAME}
++        EXPORT export_${PROJECT_NAME}
++        ARCHIVE DESTINATION lib
++        LIBRARY DESTINATION lib
++        RUNTIME DESTINATION bin
++)
+ 
+ if(BUILD_TESTING)
+   #find_package(ament_cmake_gtest REQUIRED)

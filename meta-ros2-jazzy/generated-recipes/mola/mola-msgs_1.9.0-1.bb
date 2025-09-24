@@ -19,7 +19,7 @@ ROS_BPN = "mola_msgs"
 
 ROS_BUILD_DEPENDS = " \
     action-msgs \
-    mrpt-msgs \
+    mrpt \
     nav-msgs \
 "
 
@@ -30,7 +30,7 @@ ROS_BUILDTOOL_DEPENDS = " \
 
 ROS_EXPORT_DEPENDS = " \
     action-msgs \
-    mrpt-msgs \
+    mrpt \
     nav-msgs \
 "
 
@@ -38,7 +38,7 @@ ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
 ROS_EXEC_DEPENDS = " \
     action-msgs \
-    mrpt-msgs \
+    mrpt \
     nav-msgs \
     rosidl-default-runtime \
 "

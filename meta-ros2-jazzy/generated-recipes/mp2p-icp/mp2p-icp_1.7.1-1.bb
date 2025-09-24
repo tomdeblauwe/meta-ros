@@ -17,12 +17,7 @@ ROS_BPN = "mp2p_icp"
 
 ROS_BUILD_DEPENDS = " \
     mola-common \
-    mrpt-libbase \
-    mrpt-libgui \
-    mrpt-libmaps \
-    mrpt-libobs \
-    mrpt-libposes \
-    mrpt-libtclap \
+    mrpt \
     ros-environment \
     tbb \
 "
@@ -33,12 +28,7 @@ ROS_BUILDTOOL_DEPENDS = " \
 
 ROS_EXPORT_DEPENDS = " \
     mola-common \
-    mrpt-libbase \
-    mrpt-libgui \
-    mrpt-libmaps \
-    mrpt-libobs \
-    mrpt-libposes \
-    mrpt-libtclap \
+    mrpt \
     tbb \
 "
 
@@ -46,13 +36,15 @@ ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
 ROS_EXEC_DEPENDS = " \
     mola-common \
-    mrpt-libbase \
-    mrpt-libgui \
-    mrpt-libmaps \
-    mrpt-libobs \
-    mrpt-libposes \
-    mrpt-libtclap \
+    mrpt \
     tbb \
+"
+
+INSANE_SKIP:${PN} += "dev-so"
+
+EXTRA_OECMAKE:append = " \
+    -DMP2PICP_BUILD_TESTING=OFF \
+    -DMP2PICP_BUILD_APPLICATIONS=OFF \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
@@ -67,7 +59,9 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 
 # matches with: https://github.com/ros2-gbp/mp2p_icp-release/archive/release/jazzy/mp2p_icp/1.7.1-1.tar.gz
 ROS_BRANCH ?= "branch=release/jazzy/mp2p_icp"
-SRC_URI = "git://github.com/ros2-gbp/mp2p_icp-release;${ROS_BRANCH};protocol=https"
+SRC_URI = "git://github.com/ros2-gbp/mp2p_icp-release;${ROS_BRANCH};protocol=https \
+    file://0001-remove-gui-dep.patch \
+"
 SRCREV = "c4b2d0655cb2ecb1591bba3f7f36958c9413f305"
 S = "${WORKDIR}/git"
 

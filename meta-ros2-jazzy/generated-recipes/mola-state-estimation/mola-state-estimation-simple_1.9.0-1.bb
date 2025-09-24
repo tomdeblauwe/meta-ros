@@ -21,7 +21,7 @@ ROS_BUILD_DEPENDS = " \
     mola-common \
     mola-imu-preintegration \
     mola-kernel \
-    mrpt-libobs \
+    mrpt \
 "
 
 ROS_BUILDTOOL_DEPENDS = " \
@@ -32,7 +32,7 @@ ROS_EXPORT_DEPENDS = " \
     mola-common \
     mola-imu-preintegration \
     mola-kernel \
-    mrpt-libobs \
+    mrpt \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
@@ -41,8 +41,10 @@ ROS_EXEC_DEPENDS = " \
     mola-common \
     mola-imu-preintegration \
     mola-kernel \
-    mrpt-libobs \
+    mrpt \
 "
+
+INSANE_SKIP:${PN} += "dev-so"
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
 ROS_TEST_DEPENDS = ""

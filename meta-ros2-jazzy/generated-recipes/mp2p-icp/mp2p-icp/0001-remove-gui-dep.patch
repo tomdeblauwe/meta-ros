@@ -1,0 +1,88 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 86c0a51..b30a573 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -54,7 +54,6 @@ find_package(MRPT 2.11.5 REQUIRED COMPONENTS
+ 	containers
+ 	tfest
+ 	maps
+-	gui
+ 	topography
+ )
+ find_package(Threads REQUIRED)
+diff --git a/mp2p_icp/CMakeLists.txt b/mp2p_icp/CMakeLists.txt
+index 8f97713..b8740fe 100644
+--- a/mp2p_icp/CMakeLists.txt
++++ b/mp2p_icp/CMakeLists.txt
+@@ -84,13 +84,11 @@ mola_add_library(
+ 		mrpt::containers
+ 		mrpt::tfest
+ 		mrpt::maps
+-		mrpt::gui
+ 	CMAKE_DEPENDENCIES
+ 		mp2p_icp_map
+ 		mrpt-containers
+ 		mrpt-maps
+ 		mrpt-tfest
+-		mrpt-gui
+ )
+ 
+ if (MP2PICP_BUILD_POINTMATCHER)
+diff --git a/mp2p_icp/src/QualityEvaluator_RangeImageSimilarity.cpp b/mp2p_icp/src/QualityEvaluator_RangeImageSimilarity.cpp
+index 78ad189..60f0af8 100644
+--- a/mp2p_icp/src/QualityEvaluator_RangeImageSimilarity.cpp
++++ b/mp2p_icp/src/QualityEvaluator_RangeImageSimilarity.cpp
+@@ -11,7 +11,7 @@
+  */
+ 
+ #include <mp2p_icp/QualityEvaluator_RangeImageSimilarity.h>
+-#include <mrpt/gui/CDisplayWindow.h>
++// #include <mrpt/gui/CDisplayWindow.h>
+ #include <mrpt/img/TPixelCoord.h>
+ #include <mrpt/io/vector_loadsave.h>
+ 
+@@ -66,25 +66,25 @@ QualityEvaluator::Result QualityEvaluator_RangeImageSimilarity::evaluate(
+     // ----- Debug ----------
+     if (debug_show_all_in_window)
+     {
+-        mrpt::gui::CDisplayWindow win_11("I11", 400, 300);
+-        mrpt::gui::CDisplayWindow win_12("I12", 400, 300);
+-        mrpt::gui::CDisplayWindow win_21("I21", 400, 300);
+-        mrpt::gui::CDisplayWindow win_22("I22", 400, 300);
+-        win_11.setPos(5, 5);
+-        win_12.setPos(410 + 5, 5);
+-        win_21.setPos(5, 310 + 5);
+-        win_22.setPos(410 + 5, 310 + 5);
+-        mrpt::img::CImage im11, im12, im21, im22;
+-        im11.setFromMatrix(I11, false);
+-        win_11.showImage(im11);
+-        im12.setFromMatrix(I12, false);
+-        win_12.showImage(im12);
+-        im21.setFromMatrix(I21, false);
+-        win_21.showImage(im21);
+-        im22.setFromMatrix(I22, false);
+-        win_22.showImage(im22);
+-        win_11.waitForKey();
+-    }
++    //     mrpt::gui::CDisplayWindow win_11("I11", 400, 300);
++    //     mrpt::gui::CDisplayWindow win_12("I12", 400, 300);
++    //     mrpt::gui::CDisplayWindow win_21("I21", 400, 300);
++    //     mrpt::gui::CDisplayWindow win_22("I22", 400, 300);
++    //     win_11.setPos(5, 5);
++    //     win_12.setPos(410 + 5, 5);
++    //     win_21.setPos(5, 310 + 5);
++    //     win_22.setPos(410 + 5, 310 + 5);
++    //     mrpt::img::CImage im11, im12, im21, im22;
++    //     im11.setFromMatrix(I11, false);
++    //     win_11.showImage(im11);
++    //     im12.setFromMatrix(I12, false);
++    //     win_12.showImage(im12);
++    //     im21.setFromMatrix(I21, false);
++    //     win_21.showImage(im21);
++    //     im22.setFromMatrix(I22, false);
++    //     win_22.showImage(im22);
++    //     win_11.waitForKey();
++    }
+     if (debug_save_all_matrices)
+     {
+         static std::atomic_int iv = 0;

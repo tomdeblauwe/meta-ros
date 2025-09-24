@@ -20,9 +20,7 @@ ROS_BPN = "mola_kernel"
 ROS_BUILD_DEPENDS = " \
     mola-common \
     mola-yaml \
-    mrpt-libgui \
-    mrpt-libmaps \
-    mrpt-libobs \
+    mrpt \
 "
 
 ROS_BUILDTOOL_DEPENDS = " \
@@ -32,9 +30,7 @@ ROS_BUILDTOOL_DEPENDS = " \
 ROS_EXPORT_DEPENDS = " \
     mola-common \
     mola-yaml \
-    mrpt-libgui \
-    mrpt-libmaps \
-    mrpt-libobs \
+    mrpt \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
@@ -42,10 +38,10 @@ ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 ROS_EXEC_DEPENDS = " \
     mola-common \
     mola-yaml \
-    mrpt-libgui \
-    mrpt-libmaps \
-    mrpt-libobs \
+    mrpt \
 "
+
+INSANE_SKIP:${PN} += "dev-so"
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
 ROS_TEST_DEPENDS = ""
@@ -59,7 +55,9 @@ RDEPENDS:${PN} += "${ROS_EXEC_DEPENDS}"
 
 # matches with: https://github.com/ros2-gbp/mola-release/archive/release/jazzy/mola_kernel/1.9.0-1.tar.gz
 ROS_BRANCH ?= "branch=release/jazzy/mola_kernel"
-SRC_URI = "git://github.com/ros2-gbp/mola-release;${ROS_BRANCH};protocol=https"
+SRC_URI = "git://github.com/ros2-gbp/mola-release;${ROS_BRANCH};protocol=https \
+    file://0001-remove-gui-dep.patch \
+"
 SRCREV = "7ed110ded228b080db68f36e127512a31f32b35a"
 S = "${WORKDIR}/git"
 

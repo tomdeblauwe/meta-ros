@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8d7585a04..3ba87e88e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -18,7 +18,7 @@ find_package(mola_common REQUIRED)
+ find_package(mola_yaml REQUIRED)
+ 
+ # find dependencies:
+-find_package(MRPT 2.1.0 REQUIRED COMPONENTS gui obs maps topography)
++find_package(MRPT 2.1.0 REQUIRED COMPONENTS obs maps topography)
+ 
+ # define lib:
+ set(LIB_SRCS

@@ -21,7 +21,7 @@ ROS_BUILD_DEPENDS = " \
     ament-cmake-xmllint \
     mola-common \
     mp2p-icp \
-    mrpt-libmaps \
+    mrpt \
     ros-environment \
 "
 
@@ -34,7 +34,7 @@ ROS_BUILDTOOL_DEPENDS = " \
 ROS_EXPORT_DEPENDS = " \
     mola-common \
     mp2p-icp \
-    mrpt-libmaps \
+    mrpt \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
@@ -42,7 +42,7 @@ ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 ROS_EXEC_DEPENDS = " \
     mola-common \
     mp2p-icp \
-    mrpt-libmaps \
+    mrpt \
 "
 
 # Currently informational only -- see http://www.ros.org/reps/rep-0149.html#dependency-tags.
@@ -50,6 +50,8 @@ ROS_TEST_DEPENDS = " \
     ament-lint-auto \
     ament-lint-common \
 "
+
+INSANE_SKIP:${PN} += "dev-so"
 
 DEPENDS = "${ROS_BUILD_DEPENDS} ${ROS_BUILDTOOL_DEPENDS}"
 # Bitbake doesn't support the "export" concept, so build them as if we needed them to build this package (even though we actually
