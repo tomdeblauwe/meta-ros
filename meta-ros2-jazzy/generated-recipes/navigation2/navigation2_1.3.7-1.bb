@@ -75,6 +75,9 @@ SRC_URI = "git://github.com/SteveMacenski/navigation2-release;${ROS_BRANCH};prot
 SRCREV = "ac28a4e2d98cefd344a01d752fb0a4f7b0d22569"
 S = "${WORKDIR}/git"
 
+require nav2-repo.inc
+S = "${WORKDIR}/git/navigation2"
+
 ROS_BUILD_TYPE = "ament_cmake"
 
 inherit ros_${ROS_BUILD_TYPE}
